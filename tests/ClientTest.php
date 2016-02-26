@@ -161,38 +161,47 @@
         //     $test_stylist->save();
         //
         //     $name = "Bethany";
-        //     $id = null;
         //     $stylist_id = $test_stylist->getId();
         //     $test_client = new Client($name, $id, $stylist_id);
         //     $test_client->save();
         //
+        //
         //     $name2 = "Caroline";
-        //     $id = null;
         //     $stylist_id = $test_stylist->getId();
         //     $test_client2 = new Client($name2, $id, $stylist_id);
         //     $test_client2->save();
         //
+        //
         //     //Act
         //     $test_client->deleteClient();
+        //
         //
         //     //Assert
         //     $this->assertEquals([$test_client2], Client::getAll());
         // }
 
-        // function testFindClient()
-        // {
-        //     //Arrange
-        //     $name = "Bethany";
-        //     $id = null;
-        //     $test_client = new Client($name, $id);
-        //     $test_client->save();
-        //
-        //     //Act
-        //     $result = Client::findClient($test_client->getId());
-        //
-        //     //Assert
-        //     $this->assertEquals($test_client, $result);
-        // }
+        function testFindClient()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = null;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+            $test_stylist->save();
+
+            $name = "Bethany";
+            $id = null;
+            $stylist_id = $test_stylist->getId();
+            $test_client = new Client($name, $id, $stylist_id);
+            $test_client->save();
+
+            //Act
+            $result = Client::findClient($test_client->getId());
+
+            //Assert
+            $this->assertEquals($test_client, $result);
+        }
 
 
     }

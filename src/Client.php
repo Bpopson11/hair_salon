@@ -58,10 +58,11 @@ class Client
         $GLOBALS['DB']->exec("DELETE FROM clients;");
     }
 
-    function deleteClient()
-    {
-        $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
-    }
+    // function deleteClient()
+    // {
+    //     $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+    //     $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
+    // }
 
     function updateClientName($new_name)
     {

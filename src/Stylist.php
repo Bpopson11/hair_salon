@@ -78,7 +78,7 @@ class Stylist
     function deleteStylist()
     {
         $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
-        $GLOBALS['DB']->exec("DELETE FROM clients where stylist_id = {$this->getId()};");
+        $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
     }
 
     function updateSytlistName($new_name)
