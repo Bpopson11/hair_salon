@@ -53,6 +53,23 @@
           $this->assertEquals("Hair color", $result);
         }
 
+
+        function test_getId()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = 1;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+
+            //Act
+            $result = $test_stylist->getId();
+
+            //Assert
+            $this->assertEquals(true, is_numeric($result));
+        }
+
     }
 
 ?>
