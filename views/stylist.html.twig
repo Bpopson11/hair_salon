@@ -1,8 +1,8 @@
 <html>
   <head>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
-    <link rel="stylesheet" href="/css/normalize.css"> -->
+    <link rel="stylesheet" href="/css/normalize.css">
     <title>PDXpress Salon!</title>
   </head>
   <body>
@@ -13,7 +13,7 @@
       {% if clients is not empty %}
           <ul>
                 {% for client in clients %}
-                    <li>{{ stylist.getClients }}</li>
+                    <li>{{ client.getName }}</a></li>
                 {% endfor %}
           </ul>
       {% else %}
