@@ -1,10 +1,44 @@
 <html>
-<head>
-    <title></title>
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>PDXpress Hair Salon!</title>
+  </head>
+  <body>
+      <h1>Welcome to PDXpress Hair Salon!</h1>
+
+      <p>Below a stlyist may add her/his profile:</p>
+
+      <form action="/stylists" method="post">
+          <label for="name">Stylist Name:</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="specialty">Specialty:</label>
+          <input id="specialty" name="specialty" type="text" required>
+
+          <label for="email">E-mail Address:</label>
+          <input id="email" name="email" type="text" required>
+
+          <button type="submit">Add Profile</button>
+      </form>
+
+      {% if stylists is not empty %}
+          <p>Here are all your stylists</p>
+          <ul>
+                {% for stylist in stylists %}
+                    <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
+                    <ul>
+                      <li>Specialty: {{ stylist.getSpecialty }}</li>
+                      <li>E-mail: {{ stylist.getEmail }}</li>
+                    </ul>
+                {% endfor %}
+          </ul>
+      {% else %}
+          <p>There are no stylist profiles yet!</p>
+      {% endif %}
 
 
 
-</body>
+  </body>
 </html>
