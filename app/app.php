@@ -47,17 +47,27 @@
         return $app['twig']->render('client.html.twig', array('clients' => Client::getAll()));
     });
 
-    $app->post("/clients", function() use ($app)
-    {
-        $client = new Client($_POST['name']);
+    $app->post("/clients", function() use ($app) {
+        $name = $_POST['name'];
+        $stylist_id = $_POST['stylist_id'];
+        $client = new Client($name, $id = null, $stylist_id);
         $client->save();
-        return $app['twig']->render('client.html.twig', array('clients' => Client::getAll()));
-    });
+        $stylist = Stylist::findStylist($stylist_id);
+        return $app['twig']->render('client.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
+      });
 
     $app->post("/delete_all_clients", function() use ($app)
     {
         Client::deleteAll();
-        return $app['twig']->render('client.html.twig', array('clients' => null));
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
+    //stylist client ineraction
+
+    $app->get("/stylists/{id}", function($id) use ($app)
+    {
+        $stylist = Stylist::findStylist($id);
+        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
     });
 
 

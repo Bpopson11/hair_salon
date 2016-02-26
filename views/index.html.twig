@@ -1,8 +1,8 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css"> -->
     <title>PDXpress Hair Salon!</title>
   </head>
   <body>
@@ -10,24 +10,24 @@
 
       <p>Below a stlyist may add her/his profile:</p>
 
-      <form action="/stylists" method="post">
-          <label for="name">Stylist Name:</label>
-          <input id="name" name="name" type="text" required>
+      <form action='/stylists' method='post'>
+          <label for='name'>Stylist Name:</label>
+          <input id='name' name='name' type='text' required>
 
-          <label for="specialty">Specialty:</label>
-          <input id="specialty" name="specialty" type="text" required>
+          <label for='specialty'>Specialty:</label>
+          <input id='specialty' name='specialty' type='text' required>
 
-          <label for="email">E-mail Address:</label>
-          <input id="email" name="email" type="text" required>
+          <label for='email'>E-mail Address:</label>
+          <input id='email' name='email' type='text' required>
 
-          <button type="submit">Add Profile</button>
+          <button type='submit'>Add Profile</button>
       </form>
 
-      {% if stylists is not empty %}
+      {% if stylists %}
           <p>Here are all your stylists</p>
           <ul>
                 {% for stylist in stylists %}
-                    <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
+                    <li><a href='/stylists/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>
                     <ul>
                       <li>Specialty: {{ stylist.getSpecialty }}</li>
                       <li>E-mail: {{ stylist.getEmail }}</li>
