@@ -138,6 +138,31 @@
             $this->assertEquals("Nicole", $test_stylist->getName());
         }
 
+        function testDelete()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = null;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+            $test_stylist->save();
+
+            $name2 = "Jamie";
+            $specialty2 = "Curly hair";
+            $email2 = "jamie2@email.com";
+            $id = null;
+            $test_stylist2 = new Stylist($name2, $specialty2, $email2, $id);
+            $test_stylist2->save();
+
+            //Act
+            $test_stylist->deleteStylist();
+
+            //Assert
+            $this->assertEquals([$test_stylist2], Stylist::getAll());
+          }
+
+
     }
 
 ?>
