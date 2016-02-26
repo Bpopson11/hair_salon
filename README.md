@@ -41,7 +41,9 @@ Query OK, 0 rows affected (0.09 sec)
 mysql> CREATE TABLE clients (name VARCHAR (255), id serial PRIMARY KEY);
 Query OK, 0 rows affected (0.09 sec)
 
-
+mysql> ALTER TABLE clients ADD (stylist_id INT);
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
 ### License
 
