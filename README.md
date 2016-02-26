@@ -27,6 +27,19 @@ _As of 2/19/16 the stringHighlight method does not work properly on single lette
 
 _This app was built in PHP using HTML alongside Silex and Twig._
 
+## MySql code used
+
+mysql> CREATE DATABASE hair_salon;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE hair_salon;
+Database changed
+
+mysql> CREATE TABLE stylists (name VARCHAR (255), specialty VARCHAR (255), email VARCHAR(255), id serial PRIMARY KEY);
+Query OK, 0 rows affected (0.09 sec)
+
+
+
 ### License
 
 *MIT License*
