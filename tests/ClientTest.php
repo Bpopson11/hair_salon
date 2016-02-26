@@ -105,7 +105,7 @@
             $test_client->updateClientName($new_name);
 
             //Assert
-            $this->assertEquals("Nicole", $test_client->getName());
+            $this->assertEquals("Beth", $test_client->getName());
         }
 
         function testDelete()
@@ -127,7 +127,7 @@
             //Assert
             $this->assertEquals([$test_client2], Client::getAll());
         }
-
+        
         function testFindClient()
         {
             //Arrange
