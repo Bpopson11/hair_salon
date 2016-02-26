@@ -34,6 +34,12 @@
     		return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
   	});
 
+    $app->post("/delete_all_stylists", function() use ($app)
+    {
+        Stylist::deleteAll();
+        return $app['twig']->render('index.html.twig', array('stylists' => null));
+    });
+
 
       return $app;
 
