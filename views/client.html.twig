@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>PDXpress Hair Salon!</title>
+  </head>
+  <body>
+      <h1>Welcome to PDXpress Hair Salon!</h1>
+
+      <p>Below a stlyist may add her/his clients:</p>
+
+      <form action="/clients" method="post">
+          <label for="name">Client Name:</label>
+          <input id="name" name="name" type="text" required>
+
+          <button type="submit">Add Client</button>
+      </form>
+
+      {% if clients is not empty %}
+          <p>Here are all your clients</p>
+          <ul>
+                {% for client in clients %}
+                    <li>Client: {{ client.getName }}</li>
+                {% endfor %}
+          </ul>
+      {% else %}
+          <p>There are no client profiles yet!</p>
+      {% endif %}
+
+      <form action='/delete_all_clients' method='post'>
+        <button type='submit'>Clear All</button>
+      </form>
+
+
+
+  </body>
+</html>
