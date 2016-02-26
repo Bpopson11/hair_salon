@@ -90,13 +90,13 @@ class Stylist
     function updateSytlistSpecialty($new_specialty)
     {
         $GLOBALS['DB']->exec("UPDATE stylists SET specialty = '{$new_specialty}' WHERE id = {$this->getId()};");
-        $this->setName($new_specialty);
+        $this->setSpecialty($new_specialty);
     }
 
     function updateSytlistEmail($new_email)
     {
         $GLOBALS['DB']->exec("UPDATE stylists SET email = '{$new_email}' WHERE id = {$this->getId()};");
-        $this->setName($new_email);
+        $this->setEmail($new_email);
     }
 
     static function findStylist($search_id)

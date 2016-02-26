@@ -119,6 +119,25 @@
             $this->assertEquals([], $result);
           }
 
+        function testUpdate()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = null;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+            $test_stylist->save();
+
+            $new_specialty = "Eyebrow waxing";
+
+            //Act
+            $test_stylist->updateSytlistSpecialty($new_specialty);
+
+            //Assert
+            $this->assertEquals("Eyebrow waxing", $test_stylist->getSpecialty());
+        }
+
     }
 
 ?>
