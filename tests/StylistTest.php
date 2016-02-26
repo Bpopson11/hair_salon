@@ -70,6 +70,28 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function test_getAll()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = null;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+            $test_stylist->save();
+
+            $name2 = "Jamie";
+            $specialty2 = "Curly hair";
+            $email2 = "jamie2@email.com";
+            $id = null;
+            $test_stylist2 = new Stylist($name2, $specialty2, $email2, $id);
+            $test_stylist2->save();
+            //Act
+            $result = Stylist::getAll();
+            //Assert
+            $this->assertEquals([$test_stylist, $test_stylist2], $result);
+          }
+
     }
 
 ?>
