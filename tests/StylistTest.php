@@ -37,6 +37,22 @@
           $this->assertEquals("Nicolette", $result);
         }
 
+        function test_getSpecialty()
+        {
+          //Arrange
+          $name = "Nicolette";
+          $specialty = "Hair color";
+          $email = "nicolette@email.com";
+          $id = null;
+          $test_stylist = new Stylist($name, $specialty, $email, $id);
+
+          //Act
+          $result = $test_stylist->getSpecialty();
+
+          //Assert
+          $this->assertEquals("Hair color", $result);
+        }
+
     }
 
 ?>
