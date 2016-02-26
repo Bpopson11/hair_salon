@@ -114,13 +114,13 @@ class Stylist
 
     function getClients()
     {
-        $clients = Array();
+        $clients = array();
         $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {$this->getId()}");
         foreach($returned_clients as $client) {
             $name = $client['name'];
             $id = $client['id'];
             $stylist_id = $client['stylist_id'];
-            $new_client = new Client($name, $stylist_id, $id);
+            $new_client = new Client($name, $id, $stylist_id);
             array_push($clients, $new_client);
         }
         return $clients;
