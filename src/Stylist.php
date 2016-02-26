@@ -73,6 +73,7 @@ class Stylist
     static function deleteAll()
     {
         $GLOBALS['DB']->exec("DELETE FROM stylists;");
+    }
 
 
     function delete()

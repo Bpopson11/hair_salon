@@ -5,22 +5,37 @@
     * @backupStaticAttributes disabled
     */
 
-    require_once "src/WHATEVER_CLASS.php";
+    require_once "src/Stylist.php";
 
-    $server = 'mysql:host=localhost;dbname=my_inventory_test';
+    $server = 'mysql:host=localhost;dbname=hair_salon_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
 
 
-    class WHATEVER_CLASSTest extends PHPUnit_Framework_TestCase
+    class StylistTest extends PHPUnit_Framework_TestCase
     {
 
         protected function tearDown()
         {
-            WHATEVER_CLASS:deleteAll();
+            Stylist::deleteAll();
         }
 
+        function test_getName()
+        {
+          //Arrange
+          $name = "Nicolette";
+          $specialty = "Hair color";
+          $email = "nicolette@email.com";
+          $id = null;
+          $test_stylist = new Stylist($name, $specialty, $email, $id);
+
+          //Act
+          $result = $test_stylist->getName();
+
+          //Assert
+          $this->assertEquals("Nicolette", $result);
+        }
 
     }
 
