@@ -160,7 +160,24 @@
 
             //Assert
             $this->assertEquals([$test_stylist2], Stylist::getAll());
-          }
+        }
+
+        function testFindStylist()
+        {
+            //Arrange
+            $name = "Nicolette";
+            $specialty = "Hair color";
+            $email = "nicolette@email.com";
+            $id = null;
+            $test_stylist = new Stylist($name, $specialty, $email, $id);
+            $test_stylist->save();
+
+            //Act
+            $result = Stylist::findStylist($test_stylist->getId());
+
+            //Assert
+            $this->assertEquals($test_stylist, $result);
+        }
 
 
     }
