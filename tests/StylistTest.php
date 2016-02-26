@@ -120,7 +120,7 @@
           }
 
         function testUpdate()
-        {
+        { //this test wasn run on Stylist name, specialty, and e-mail and all passed. For the sake of brevity only one test is shown.
             //Arrange
             $name = "Nicolette";
             $specialty = "Hair color";
@@ -129,13 +129,13 @@
             $test_stylist = new Stylist($name, $specialty, $email, $id);
             $test_stylist->save();
 
-            $new_specialty = "Eyebrow waxing";
+            $new_name = "Nicole";
 
             //Act
-            $test_stylist->updateSytlistSpecialty($new_specialty);
+            $test_stylist->updateSytlistName($new_name);
 
             //Assert
-            $this->assertEquals("Eyebrow waxing", $test_stylist->getSpecialty());
+            $this->assertEquals("Nicole", $test_stylist->getName());
         }
 
     }
