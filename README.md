@@ -38,6 +38,9 @@ Database changed
 mysql> CREATE TABLE stylists (name VARCHAR (255), specialty VARCHAR (255), email VARCHAR(255), id serial PRIMARY KEY);
 Query OK, 0 rows affected (0.09 sec)
 
+mysql> CREATE TABLE clients (name VARCHAR (255), id serial PRIMARY KEY);
+Query OK, 0 rows affected (0.09 sec)
+
 
 
 ### License
