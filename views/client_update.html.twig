@@ -1,26 +1,23 @@
 <html>
   <head>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
-    <link rel="stylesheet" href="/css/normalize.css"> -->
+    <link rel="stylesheet" href="/css/normalize.css">
     <title>PDXpress Salon!</title>
   </head>
   <body>
-    <h1>Welcome to PDXpress Salon!</h1>
+    <div class="container">
+      <h1>Welcome to PDXpress Salon!</h1>
 
-    <h3>Change {{ client.getName }}'s name:</h3>
+      <h3>Change {{ client.getName }}'s name:</h3>
 
-    <form action='/client/update/{{ client.getId }}' method='post'>
-      <label for='name'>New Client Name:</label>
-      <input id='name' name='name' type='text' required>
+      <form action='/client/update/{{ client.getId }}' method='post'>
+        <label for='name'>New Client Name:</label>
+        <input id='name' name='name' type='text' required>
+        <button type='submit'>Edit</button>
+      </form>
 
-      <button type='submit'>Edit</button>
-    </form>
-
-    <a href='/'>Return Home</a><br><br>
-    <form class="" action="/client/delete/{{ client.getId }}" method="post">
-      <button type="submit" name="button">Delete Client</button>
-    </form>
-
+      <a href='/'>Return Home</a><br><br>
+    </div>
   </body>
 </html>

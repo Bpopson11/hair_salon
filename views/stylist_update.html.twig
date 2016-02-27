@@ -1,11 +1,12 @@
 <html>
   <head>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
-    <link rel="stylesheet" href="/css/normalize.css"> -->
+    <link rel="stylesheet" href="/css/normalize.css">
     <title>PDXpress Salon!</title>
   </head>
   <body>
+    <div class="container">
       <h1>Welcome to PDXpress Salon!</h1>
 
       <h3>{{ stylist.getName }}'s current details:</h3>
@@ -35,6 +36,6 @@
       <form class="" action="/stylist/delete/{{ stylist.getId }}" method="post">
           <button type="submit" name="button">Delete Stylist</button>
       </form>
-
+    </div>
   </body>
 </html>
