@@ -1,12 +1,12 @@
-# _Hair Salon_
+# _PDXpress Salon_
 
-#### _Find how many times and where a word is repeated in a sentence/paragraph/string._
+#### _Database for a Hair Salon._
 
 #### By _**Brianna Popson**_
 
 ## Description
 
-_This app was built with PHP using Silex and Twig templates._
+_This app was built with PHP using Silex and Twig templates. The database used was created via mySql. This app allows a hypothetical stylist add their basic information to a database, as well as their clients' names. The stylist can be edited and deleted individually._
 
 ## Setup/Installation Requirements
 
@@ -21,7 +21,7 @@ _This app was built with PHP using Silex and Twig templates._
 
 ## Known Bugs
 
-_As of 2/19/16 the stringHighlight method does not work properly on single letter words such as "a", or "I". Instead the method will make every instance of that letter capital. The instance count for those words is correct though._
+_There is presently (as of 2/26/16) not a functioning option to delete individual clients._
 
 ## Technologies Used
 
