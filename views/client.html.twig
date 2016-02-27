@@ -17,11 +17,9 @@
                     <li>{{ client.getName }}</li><br>
                 {% endfor %}
           </ul>
-      {% else %}
-          <p>There are no client profiles yet!</p>
       {% endif %}
 
-      <a href='/'>Add more!!</a>
+      <a href='/'>Add more!!</a><br><br>
 
       <form action='/delete_all_clients' method='post'>
         <button type='submit'>Clear All</button>

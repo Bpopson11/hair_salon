@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"  charset="utf-8">
+    <link rel="stylesheet" href="/css/normalize.css"> -->
+    <title>PDXpress Salon!</title>
+  </head>
+  <body>
+      <h1>Welcome to PDXpress Salon!</h1>
+
+      <h3>{{ stylist.getName }}'s current details:</h3>
+          <ul>
+            <li>Specialty: {{ stylist.getSpecialty }}</li>
+            <li>E-mail: {{ stylist.getEmail }}</li>
+          </ul>
+
+
+      <p>Edit Stylist Details:</p>
+
+      <form action='/stylist/update/{{ stylist.getId }}' method='post'>
+          <label for='name'>Stylist Name:</label>
+          <input id='name' name='name' type='text' required>
+
+          <label for='specialty'>Specialty:</label>
+          <input id='specialty' name='specialty' type='text' required>
+
+          <label for='email'>E-mail Address:</label>
+          <input id='email' name='email' type='text'required>
+
+          <button type='submit'>Add Profile</button>
+      </form>
+
+
+      <a href='/'>Return Home</a><br><br>
+      <form class="" action="/stylist/delete/{{ stylist.getId }}" method="post">
+          <button type="submit" name="button">Delete Stylist</button>
+      </form>
+
+
+
+
+
+  </body>
+</html>

@@ -81,19 +81,19 @@ class Stylist
         $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
     }
 
-    function updateSytlistName($new_name)
+    function updateStylistName($new_name)
     {
         $GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_name}' WHERE id = {$this->getId()};");
         $this->setName($new_name);
     }
 
-    function updateSytlistSpecialty($new_specialty)
+    function updateStylistSpecialty($new_specialty)
     {
         $GLOBALS['DB']->exec("UPDATE stylists SET specialty = '{$new_specialty}' WHERE id = {$this->getId()};");
         $this->setSpecialty($new_specialty);
     }
 
-    function updateSytlistEmail($new_email)
+    function updateStylistEmail($new_email)
     {
         $GLOBALS['DB']->exec("UPDATE stylists SET email = '{$new_email}' WHERE id = {$this->getId()};");
         $this->setEmail($new_email);

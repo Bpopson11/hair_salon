@@ -26,8 +26,12 @@
           <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
           <label for='name'>Client Name:</label>
           <input id='name' name='name' type='text' required>
-
           <button type='submit'>Add Client</button>
+      </form>
+
+      <a href='/'>Return Home</a><br><br>
+      <form action='/stylist/update/{{ stylist.getId }}' method='get'>
+          <button type='submit'>Delete/Edit stylist</button>
       </form>
 
 
