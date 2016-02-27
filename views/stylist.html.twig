@@ -13,7 +13,7 @@
       {% if clients is not empty %}
           <ul>
                 {% for client in clients %}
-                    <li>{{ client.getName }}</a></li>
+                    <li><a href='/client/update/{{ client.getId }}'>{{ client.getName }}</a></li>
                 {% endfor %}
           </ul>
       {% else %}
